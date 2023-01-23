@@ -1,0 +1,34 @@
+→Launching Ubuntu Server
+Step 1 - Firstly login into AWS
+Step 2 – Click on services→Compute→EC2 server→ Launch instance.
+Step 3 – Name server→ select any OS(‘Ubuntu’)→generate a “key-pair”→Launch instance.
+Step 4 – go to Security → Security groups →Edit inbound rules → add rule.
+Step 5 – Custom type ‘HTTP’ → source IPv4 →Save Rules
+Step 6 – Go to Instance→Connect→SSH Client→
+Step 7 - Copy Example link and paste it in gti bash
+Step 8 – Open git bash → paste the above copied link to login into server.
+$sudo apt-get update
+$sudo apt-get apache2
+$sudo apt-get update
+$sudo service apache2 status {active (running)}.
+$ cd /var/www/html/ {Default pathway}
+$ls {index.html <inbuild file>}
+Step 9 – Go to AWS → copy Public IP → paste it in new tab.
+Note:<This is the Apache 2 default page which would be displayed & its made up of index.html file>
+Step 10 – Now delete the index.html file’s containt program
+Step 11- Go to git bash
+$sudo rm -f index.html
+$ls {No file would be displayed because we have deleted it above.}
+$cd .. {to change directory}
+$exit {exit from the login server}
+Step 12 – Now copy file pathway of any html file in your local system → Open git bash.
+$ scp -i "MSR-AWS.pem" "C:\Users\Lenovo\OneDrive\Desktop\HTML FILES\prg2.html" ubuntu@ec2-
+13-233-120-216.ap-south-1.compute.amazonaws.com:/home/ubuntu/
+<The copied file name would be displayed below>.
+Step 13 – Now again login into ubuntu server & follow the code
+$ls
+$sudo vi prg2.html {to view the html code of file},
+$ mv prg2.html index.html {to rename/move the current file},
+$ sudo cp index.html /var/www/html/ {to copy “index.html” file into “/var/www/html/” pathway}
+$ls {“index.html” would be shown}
+Step 14 – Now copy public IP → paste it in new Tab {The index.html file would be displayed}
